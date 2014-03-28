@@ -3,7 +3,7 @@ module Decoratable
 
   def with(decorator)
     raise SelfDecorationError.new("Cannot self-decorate") if decorator == self
-    decorator.decorator_parent = self
+    decorator.decoratee = self
     decorator
   end
 
@@ -12,9 +12,9 @@ end
 module Decorator
   include Decoratable
 
-  attr_accessor :decorator_parent
+  attr_accessor :decoratee
 
   def method_missing(method_name, *args)
-    decorator_parent.send(method_name, *args)
+    decoratee.send(method_name, *args)
   end
 end

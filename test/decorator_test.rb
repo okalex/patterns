@@ -18,7 +18,7 @@ class Milk
   include Decorator
 
   def cost
-    decorator_parent.cost + 0.5
+    decoratee.cost + 0.5
   end
 end
 
@@ -26,7 +26,7 @@ class Sugar
   include Decorator
 
   def cost
-    decorator_parent.cost + 0.25
+    decoratee.cost + 0.25
   end
 end
 
