@@ -1,16 +1,8 @@
 require_relative '../lib/tree/b_tree'
 
 class TestCase
-  tree = Tree::BTree.new
-  tree.add(5)
-  tree.add(2)
-  tree.add(3)
-  tree.add(6)
-  tree.add(1)
+  arr = [5, 2, 3, 6, 1, 8, 7, 4, 9]
+  tree = Tree::BTree.build(arr)
 
-  puts tree.find(3)
-  puts tree.find(4)
-  puts tree.find(5)
-  puts tree.find(6)
-  puts tree.find(7)
+  tree.traverse
 end

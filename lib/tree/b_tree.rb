@@ -31,6 +31,13 @@ module Tree
         child.nil? ? nil : child.find(value)
       end
 
+      def traverse(node)
+        str = "#{node.children[0] || ' '} #{node.children[1] || ' '}"
+        puts str
+        node.children[0].traverse if node.children[0]
+        node.children[1].traverse if node.children[1]
+      end
+
     end
   end
 end

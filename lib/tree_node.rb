@@ -20,4 +20,8 @@ class TreeNode
     @strategy.find(self, value)
   end
 
+  def traverse
+    @strategy.traverse(self)
+  end
+
 end
